@@ -2,7 +2,7 @@
 We an use this tool to solve maze puzzle. It tends to help ctf player. 
 The sample or type of maze it does solve is 
 
-*.########
+*.########\n
 ..########
 ..........
 ###.......
