@@ -3,22 +3,22 @@ We an use this tool to solve maze puzzle. It tends to help ctf player.
 The sample or type of maze it does solve is 
 
 *.########\n
-..########
-..........
-###.......
-###.......
-#########.
-#########.
-..........
-........##
-#####...##
-#####.....
-#########.
-#########.
-#######...
-#######..$
+..########\n
+..........\n
+###.......\n
+###.......\n
+#########.\n
+#########.\n
+..........\n
+........##\n
+#####...##\n
+#####.....\n
+#########.\n
+#########.\n
+#######...\n
+#######..$\n
 
-.  
+
 
 Usuage:-
 AT very first it ask for maze just copy paste the maze with no extra line at end.
