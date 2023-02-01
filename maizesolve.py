@@ -1,4 +1,3 @@
-import time
 # sample_maze = """*.....####
 # ####..####
 # .....#####
@@ -39,7 +38,6 @@ for i in raw_maze:
     maze.append(i.replace(start_symbol, "s").replace(track_symbol, "d").replace(wall_symbol, "h").replace(end_symbol, "m"))
 
 
-print(maze)
 size_of_maze = len(maze)-1
 position_of_s = [-1,-1]
 position_of_d = [-1, -1]
@@ -57,8 +55,8 @@ for i in maze:
     except:
         if(position_of_d==-1 and maze.index(i)==size_of_maze):
             print("THere is no ending point")
-print(position_of_s)
-print(position_of_d)
+print("Starting coordinates: "+str(position_of_s))
+print("Ending Coordinates: "+str(position_of_d))
 reached = 0
 left_mv =0
 right_mv = 0
@@ -133,7 +131,6 @@ def output():
 
 while(reached!=1):
     check_s_and_d()
-    time.sleep(0.2)
     try:
         down_position()
     except:
@@ -152,8 +149,6 @@ while(reached!=1):
         pass
     if((down_mv==1) or (up_mv==1) or (left_mv==1) or (right_mv==1)):
         if(down_mv==1):
-            for i in maze:
-                print(i, end="\n")
             track.append([position_of_s[0], position_of_s[1]])
             maze[position_of_s[0]] = list(maze[position_of_s[0]])
             maze[position_of_s[0]][position_of_s[1]] = "t"
@@ -161,8 +156,6 @@ while(reached!=1):
             position_of_s[0] = position_of_s[0] +1
             down_mv=0
         elif(right_mv==1):
-            for i in maze:
-                print(i, end="\n")
             track.append([position_of_s[0], position_of_s[1]])
             maze[position_of_s[0]] = list(maze[position_of_s[0]])
             maze[position_of_s[0]][position_of_s[1]] = "t"
@@ -171,8 +164,6 @@ while(reached!=1):
             right_mv = 0
         elif(left_mv == 1):
             track.append([position_of_s[0], position_of_s[1]])
-            for i in maze:
-                print(i, end="\n")
             maze[position_of_s[0]] = list(maze[position_of_s[0]])
             maze[position_of_s[0]][position_of_s[1]] = "t"
             maze[position_of_s[0]] = "".join(maze[position_of_s[0]])
@@ -180,8 +171,7 @@ while(reached!=1):
             left_mv = 0
         elif(up_mv ==1):
             track.append([position_of_s[0], position_of_s[1]])
-            for i in maze:
-                print(i, end="\n")
+
             maze[position_of_s[0]] = list(maze[position_of_s[0]])
             maze[position_of_s[0]][position_of_s[1]] = "t"
             maze[position_of_s[0]] = "".join(maze[position_of_s[0]])
@@ -196,5 +186,8 @@ while(reached!=1):
 
     else:
         pass
-
+print("\nThe steps for solution is:- ")
 output()
+print("\nThe final visual solution of solved maze is: \n")
+for i in maze:
+    print(i, end="\n")
